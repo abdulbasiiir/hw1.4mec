@@ -1,0 +1,27 @@
+.main-container {
+    display: flex;
+}
+
+.toggle-button {
+    width: 40px; /* Сделаем кнопку маленькой */
+    height: 40px;
+    position: absolute; /* Для фиксированного положения */
+    top: 10px;
+    left: 10px;
+    z-index: 1000; /* Чтобы кнопка была поверх сайдбара */
+}
+
+.sidebar {
+    width: 200px; /* Установим ширину сайдбара */
+    background-color: #f4f4f4;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: fixed; /* Зафиксируем положение сайдбара */
+    height: 100%; /* Полная высота */
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 220px; /* Отступ для отображения контента при видимом сайдбаре */
+}

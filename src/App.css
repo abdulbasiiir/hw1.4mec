@@ -18,7 +18,35 @@ li {
   list-style: none;
 }
 
+
 .main {
   padding: 3rem;
-  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.card {
+  flex: 0 0 25%;
+  box-sizing: border-box;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+}
+
+button{
+  padding: 2rem;
+  border: none;
+  background-color: rgba(20, 92, 105, 0.788);
+  border-radius: 5px;
+  width: fit-content;
+  margin: 5px;
+
+  
+
+}
+button:hover{
+  background-color: rgb(12, 55, 56);
 }
