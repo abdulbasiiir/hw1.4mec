@@ -57,28 +57,35 @@ function Main() {
         }]);
     }
 
+    
+
+
     function toggleSidebar() {
         setSidebarVisible(!sidebarVisible);
     }
 
     return (
-        <div className='main-container'>
-            <button className='toggle-button' onClick={toggleSidebar}>
-                {sidebarVisible ? 'Hide Sidebar' : 'Show Sidebar'}
-            </button>
-            {sidebarVisible && <Sidebar addNewObject={AddNewObg} />}
-            <section className='main-content'>
-                {users.map((item, index) => 
-                    <Card 
-                        key={index}
-                        title={item.title}
-                        avatar={item.avatar}
-                        despretion={item.despretion}
-                        name={item.name}
-                    />
-                )}
-            </section>
-        </div>
+        <>
+            <input />
+            <button>poisk</button>
+            <div className='main-container'>
+                <button className='toggle-button' onClick={toggleSidebar}>
+                    {sidebarVisible ? 'Hide Sidebar' : 'Show Sidebar'}
+                </button>
+                {sidebarVisible && <Sidebar addNewObject={AddNewObg} />}
+                <section className='main-content'>
+                    {users.map((item, index) => 
+                        <Card 
+                            key={index}
+                            title={item.title}
+                            avatar={item.avatar}
+                            despretion={item.despretion}
+                            name={item.name}
+                        />
+                    )}
+                </section>
+            </div>
+        </>
     );
 }
 
