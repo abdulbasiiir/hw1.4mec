@@ -45,6 +45,7 @@ import './Main.css'; // Добавьте CSS файл для стилизаци�
 function Main() {
     const [users, setUsers] = useState(data);
     const [sidebarVisible, setSidebarVisible] = useState(false);
+    const [searchvalue, setSearchValue] = useState('')
 
     function AddNewObg() {
         setUsers([...users, {
@@ -63,18 +64,28 @@ function Main() {
     function toggleSidebar() {
         setSidebarVisible(!sidebarVisible);
     }
+    console.log(searchvalue);
+    const handleSearch = (event) =>{
+        setSearchValue(event.target.value);
+    };
+    const filteredData = users.filter(item => 
+        item.title.toLowerCase().includes(searchvalue.toLowerCase())
+    );
+    console.log(filteredData);
 
     return (
+        
         <>
-            <input />
-            <button>poisk</button>
+            
+            <input  onChange={handleSearch}/>
+            
             <div className='main-container'>
                 <button className='toggle-button' onClick={toggleSidebar}>
                     {sidebarVisible ? 'Hide Sidebar' : 'Show Sidebar'}
                 </button>
                 {sidebarVisible && <Sidebar addNewObject={AddNewObg} />}
                 <section className='main-content'>
-                    {users.map((item, index) => 
+                    {filteredData.map((item, index) => 
                         <Card 
                             key={index}
                             title={item.title}
